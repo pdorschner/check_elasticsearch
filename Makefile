@@ -2,6 +2,8 @@
 
 build:
 	go build -ldflags="-X 'main.version=new_value'"
+goreleaser:
+	goreleaser release --snapshot --rm-dis
 lint:
 	go fmt $(go list ./... | grep -v /vendor/)
 vet:
