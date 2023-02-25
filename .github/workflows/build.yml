@@ -47,5 +47,5 @@ jobs:
         with:
           version: latest
           args: release --rm-dist
-        permissions:
-          contents: write
+        env:
+          GITHUB_TOKEN: ${{ secrets.Foo }}
