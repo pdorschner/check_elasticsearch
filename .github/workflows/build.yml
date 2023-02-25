@@ -25,7 +25,7 @@ jobs:
         run: go test -v ./...
 
       - name: Build
-        run: go build -v .
+        run: go build -v . -ldflags="-X 'main.version=${{ version.latest }}'"
 
       - name: Run goreleaser in release mode
         if: success() && startsWith(github.ref, 'refs/tags/v')
